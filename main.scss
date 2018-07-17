@@ -1,0 +1,231 @@
+@import '@/lib/reset.scss';
+html,body,#root,.container{
+    @include rect(100%,100%)
+}
+.num{
+    button{
+        display: inline-block;
+        @include rect(0.18rem,0.18rem);
+        border:1px solid #ccc;
+        outline: none;
+    }
+    input{
+        display: inline-block;
+        @include rect(0.5rem,0.2rem);
+        border:1px solid #ccc;
+        outline: none;
+        @include text-align();
+    }
+}
+#backTop{
+    display: none;
+}
+.homeBtn{
+    position:fixed;
+    right:0.1rem;
+    bottom:0.55rem;
+}
+.loadingBox{
+    @include square(1rem);
+    @include background-color(rgba(0,0,0,0.6));
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    z-index:999;
+    @include font-size(0.16rem)
+    @include text-color(#fff);
+    @include line-height(1rem);
+    @include text-align()
+}
+.registerBob{
+    @include margin(0.5rem 0.15rem)
+    @include flexbox();
+    @include flex-direction(column);
+    @include rect(auto, auto);
+    p{
+        @include flexbox();  
+        @include flex-direction(column);
+        @include margin(0.2rem 0.2rem 0 0.2rem);
+        @include rect(auto,auto);
+        position:relative;
+    }
+    input{
+        display:block;
+        height:0.45rem;
+        outline:none;
+        @include font-size(0.14rem);
+        border-radius:0.2rem;
+        @include padding(0 0 0 0.2rem);
+        @include background-color(#ccc);
+        @include text-color(#666);
+    }
+    span{
+        display:inline-block;
+        @include square(0.25rem);
+        position:absolute;
+        right:0.5rem;
+        top:0.1rem;
+        @include font-size(0.2rem)
+        @include line-height(0.25rem);
+        @include text-align();
+        @include text-color(#f66);
+    }
+    .del{
+        display:inline-block;
+        @include rect(0.4rem,0.25rem);
+        @include font-size(0.12rem);
+        @include line-height(0.25rem);
+        @include text-color(#666);
+        @include text-align();
+        position:absolute;
+        right:0.2rem;
+        top:0.1rem;
+        cursor: pointer;
+        z-index: 999;
+    }
+    .register{
+        @include margin(0.2rem 0.2rem 0 0.2rem);
+        height:0.45rem;
+        @include background-color(#f66);
+        border-radius:0.2rem;
+        @include font-size(0.14rem)
+        @include text-color(#fff);
+        @include line-height(0.45rem);
+        @include text-align()
+    }
+}
+.container{
+    @include flexbox();  
+    @include flex-direction(column);
+    .main{
+        @include flex();  
+        @include rect(100%,auto);
+        @include flexbox();  
+        @include flex-direction(column);
+        header{
+            @include rect(100%,0.45rem);
+            @include background-color(#f66);
+            @include flexbox();
+            @include text-color(#fff);
+            .left{
+                @include rect(0.3rem,100%);
+                @include margin(0 0.1rem 0 0.1rem);
+            }
+            .center{
+                @include flex();  
+                @include rect(auto,100%);
+            }
+            .right{
+                @include rect(0.3rem,100%);
+                @include margin(0 0.1rem 0 0.1rem);
+            }
+            .left,.center,.right{
+                @include flexbox();
+                @include justify-content();
+                @include align-items();
+            }
+        }
+        .content{
+//          @include flex();  
+            @include flex-direction(column);
+            @include justify-content();
+            @include rect(100%,100%);
+            @include overflow();
+            @include font-size(0.12rem);
+            .prolist{
+                li{
+                    @include rect(100%,1rem);
+                    @include border(0 0 1px 0,#ccc);
+                    @include flexbox(); 
+                    img{
+                        @include rect(0.9rem,0.9rem);
+                        @include margin(0.05rem);
+                    }
+                    .proinfo{
+                        @include flex();
+                        white-space: wrap;
+//                      @include padding(0 0.1rem 0 0.1rem);
+                    }
+                }
+            }
+            .DetailImg{
+                @include rect(0.9rem,0.9rem);
+                @include margin(0.05rem);
+                float:left;
+            }
+            &.kindContent{
+                @include flexbox();
+                @include rect(100%, 100%);
+                @include justify-content();
+                position:relative;
+                .kindMenu {
+                    @include rect(1rem, 100%);
+                    @include overflow();
+                    @include border(0 1px 0 0, #ccc);
+                    li{
+                        @include rect(1rem, 0.6rem);
+                        @include border(0 0 1px 0, #ccc);
+                        @include text-align();
+                        @include line-height(0.6rem);
+                        a{
+                            &.active{
+                                @include text-color(#f66)
+                            }
+                        }
+                        
+                    }
+                }
+                .kindList{
+                    @include flex();
+                    @include rect(100%,100%);
+                    @include overflow();
+                    position:absolute;
+                    left:1rem;
+                    top:0;
+                }
+            }
+        }
+    }
+    footer{
+        @include rect(100%,0.5rem);
+        @include background-color(#ccc);
+        ul{
+            @include rect(100%,100%);
+            @include flexbox();  
+            li{
+                @include flex(); 
+                @include rect(auto,100%);
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content();
+                @include align-items();
+                @include text-align();
+                @include line-height(0.5rem);
+                a{
+                    @include text-color(#333);
+                    &.active{
+                        @include text-color(#f66);
+                    }
+                }
+            }
+        }
+    }
+}
+.space-carousel {
+  padding: 16px;
+  background: #DEF1E5;
+  overflow: hidden;
+  touch-action: none;
+}
+.am-search {
+    @include rect(100%,auto);
+  border-bottom: 1px solid #ddd;
+}
+.sub-title {
+  color: #888;
+  font-size: 14px;
+  padding: 30px 0 18px 0;
+}
